@@ -31,11 +31,12 @@ def main_handler(environ, start_response):
     oss_client = get_oss_client(evt, context)
     ret = _main_handler(oss_client, evt, context)
 
-    status = '302 FOUND'
-    response_headers = [('Location', sign_url(oss_client, ret))]
-    start_response(status, response_headers)
+    # status = '302 FOUND'
+    # response_headers = [('Location', sign_url(oss_client, ret))]
+    # start_response(status, response_headers)
 
-    return "ok"
+    # return "ok"
+    return ret
 
 
 def _main_handler(oss_client, evt, context):
